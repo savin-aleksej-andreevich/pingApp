@@ -16,4 +16,8 @@ public class CacheActor extends AbstractActor {
                 .build();
     }
 
+    private void storeToCache(StoreRequest request) {
+
+    }
+
 }
