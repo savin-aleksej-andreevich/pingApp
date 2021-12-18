@@ -1,2 +1,4 @@
-package ru.bmstu;public class CacheActor {
+package ru.bmstu;
+
+public class CacheActor extends AbstractActor{
 }
