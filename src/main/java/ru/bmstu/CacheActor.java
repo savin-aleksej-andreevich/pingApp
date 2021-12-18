@@ -6,5 +6,6 @@ import akka.japi.pf.ReceiveBuilder;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CacheActor extends AbstractActor{
+public class CacheActor extends AbstractActor {
+
 }
