@@ -7,5 +7,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CacheActor extends AbstractActor {
+    private final Map<String, Long> data = new HashMap<>()
 
 }
