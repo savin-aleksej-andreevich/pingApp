@@ -3,6 +3,8 @@ package ru.bmstu;
 import akka.actor.AbstractActor;
 import akka.japi.Pair;
 import akka.japi.pf.ReceiveBuilder;
+
+import java.net.CacheResponse;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,6 +19,14 @@ public class CacheActor extends AbstractActor {
     }
 
     private void storeToCache(StoreRequest request) {
+        data.put(request.getUrl(), request.getTime());
+    }
+
+    private void findCache(Pair<String, Integer> request) {
+        String url = request.first();
+        sender().tell(
+                new CacheResponse(url, data.containsKey(url)? data.get(url): -1L), getSelf()
+        );
 
     }
 
