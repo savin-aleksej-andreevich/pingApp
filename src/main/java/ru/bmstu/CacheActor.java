@@ -12,9 +12,9 @@ public class CacheActor extends AbstractActor {
     private final Map<String, Long> data = new HashMap<>();
     @Override
     public Receive createReceive() {
-        return ReceiveBulder.create()
+        return ReceiveBuilder.create()
                 .match(Pair.class, this::findCache)
-                .match(StoreRequest.class, this::StoreToCache)
+                .match(StoreRequest.class, this::storeToCache)
                 .build();
     }
 
