@@ -3,6 +3,7 @@ package ru.bmstu;
 import akka.actor.ActorRef;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.Query;
+import akka.japi.Pair;
 import akka.stream.ActorMaterializer;
 
 public class PingApp {
