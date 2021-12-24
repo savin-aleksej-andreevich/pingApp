@@ -8,7 +8,6 @@ import akka.actor.AbstractActor;
 import akka.japi.Pair;
 import akka.japi.pf.ReceiveBuilder;
 
-import CacheResponse;
 
 public class CacheActor extends AbstractActor {
     private final Map<String, Long> data = new HashMap<>();
@@ -16,7 +15,7 @@ public class CacheActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(Pair.class, this::findCache)
+                .match(Pair.class, this::findInCache)
                 .match(StoreRequest.class, this::storeToCache)
                 .build();
     }
