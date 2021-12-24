@@ -8,4 +8,12 @@ public class CacheResponse {
         this.url = url;
         this.time = time;
     }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public Long getTime() {
+        return time;
+    }
 }
