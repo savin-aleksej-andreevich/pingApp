@@ -1,6 +1,5 @@
 package ru.bmstu;
 
-import java.net.CacheResponse;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,7 +28,6 @@ public class CacheActor extends AbstractActor {
         sender().tell(
                 new CacheResponse(url, data.containsKey(url)? data.get(url): -1L), getSelf()
         );
-
     }
 
 }
