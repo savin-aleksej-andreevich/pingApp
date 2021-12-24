@@ -8,7 +8,8 @@ import akka.actor.AbstractActor;
 import akka.japi.Pair;
 import akka.japi.pf.ReceiveBuilder;
 
-import ru.bmstu.CacheResponse;
+import CacheResponse;
+
 public class CacheActor extends AbstractActor {
     private final Map<String, Long> data = new HashMap<>();
 
