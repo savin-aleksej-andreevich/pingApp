@@ -1,15 +1,17 @@
 package ru.bmstu;
 
-import akka.actor.AbstractActor;
-import akka.japi.Pair;
-import akka.japi.pf.ReceiveBuilder;
-
 import java.net.CacheResponse;
 import java.util.HashMap;
 import java.util.Map;
 
+import akka.actor.AbstractActor;
+import akka.japi.Pair;
+import akka.japi.pf.ReceiveBuilder;
+
+import ru.bmstu.CacheResponse;
 public class CacheActor extends AbstractActor {
     private final Map<String, Long> data = new HashMap<>();
+
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
@@ -22,7 +24,7 @@ public class CacheActor extends AbstractActor {
         data.put(request.getUrl(), request.getTime());
     }
 
-    private void findCache(Pair<String, Integer> request) {
+    private void findInCache(Pair<String, Integer> request) {
         String url = request.first();
         sender().tell(
                 new CacheResponse(url, data.containsKey(url)? data.get(url): -1L), getSelf()
